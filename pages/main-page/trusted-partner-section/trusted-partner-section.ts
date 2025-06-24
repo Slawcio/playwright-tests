@@ -1,7 +1,7 @@
 import { Page, Locator } from "@playwright/test";
 import BasePage from "../../base-page";
 
-export default class KeyFactSection extends BasePage {
+export default class TrustedPartnerSection extends BasePage {
 
     constructor(page: Page) {
         super(page);

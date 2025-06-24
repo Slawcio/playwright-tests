@@ -17,35 +17,16 @@ export default abstract class BasePage {
 
                 
                 if (locator && typeof locator === 'object' && typeof locator.isVisible === 'function') {
-                    try {
                         await test.step(`Checking visibility of locator: ${locatorName}`, async () => {
                             await expect(locator).toBeVisible();
-                        });
-                    } catch (error) {
-                        const timestamp = `${new Date().toISOString().replace(/[:.]/g, '-')}`;
-                        const pageName = this.constructor.name;
-                        const logMessage = [
-                            `❌ → Error: ${error.message}`,
-                            `📖 - Page:         ${this.constructor.name}`,
-                            `👁️ - Locator name: ${locatorName}`,
-                            `🕒 - Timestamp:    timestamp}`,
-                            `🌐 - URL:          ${this.page.url()}`,
-                        ].join('\n');
-                        console.error(logMessage);
-                        throw error;
-                    }        
+                        });   
                 }       
             }
         }
   }
     
     async waitForPageLoad(): Promise<void> {
-    
         await this.page.waitForLoadState('networkidle');
-    }
-    
-    async close(): Promise<void> {
-        await this.page.close();
     }
 
 }

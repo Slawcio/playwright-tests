@@ -8,29 +8,31 @@ export default class FinalServicesSection extends BasePage {
     }
     
     get container(): Locator { return this.page.locator("article[class='cards-block py-4 py-xl-8 overflow-hidden'] div[class='container-fluid']"); }
-    get label(): Locator { return this.page.locator("h2.fs-24 lh-32 fs-md-32 lh-md-40 ff-medium mb-5 mb-xl-6"); }
-    get cardsContainer(): Locator { return this.page.locator("ul[class='list-reset d-flex flex-column flex-md-row flex-wrap gap-4 gap-md-5']"); }
+    get subheading(): Locator { return this.page.locator("//h2[normalize-space()='End-to-end solutions for financial services']"); }
+    get cardsContainer(): Locator { return this.page.locator(".row.gy-4.gy-lg-6.d-none.d-md-flex"); }
   
 
     async getCardsList(): Promise<Card[]> {
         const cardContainer = this.cardsContainer;
-        const listItems = cardContainer.locator('a');
-        const count = await listItems.count();
-        const cardsList: Card[] = [];
+        const cardList = cardContainer.locator('a');
+        const count = await cardList.count();
+        const cardObjects: Card[] = [];
         
          for (let i = 0; i < count; i++) {
-          cardsList.push(new Card(this.page, listItems.nth(i)));
+          cardObjects.push(new Card(this.page, cardList.nth(i)));
         }
 
-          return cardsList;
-      }
+        return cardObjects;
+    }
 }
   
-  class Card extends BasePage {
+class Card extends BasePage {
+
       constructor(page: Page, private readonly card: Locator) {
           super(page);
       }
   
+      get cardElement(): Locator { return this.card; }
       get title(): Locator { return this.card.locator("h3"); }
       get description(): Locator { return this.card.locator("p"); }
       get button(): Locator { return this.card.locator(".btn"); }
