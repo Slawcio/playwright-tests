@@ -13,7 +13,6 @@ export default class KeyFactSection extends BasePage {
 
     async getKeyFactList(): Promise<KeyFact[]>{
         const listItems = this.page.locator("ul.list-reset.d-flex.flex-column.gap-4 > li");
-        // console.log('listItems: ', listItems);
         const count = await listItems.count();
         const keyFactList: KeyFact[] = [];
 
