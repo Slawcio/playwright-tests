@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import commonSteps from '../common-steps/common-steps';
 import Header from '../../pages/header/header';
-import data from '../data/data';
+import DATA from '../data/data';
 
 test.describe('header redirects', () => {
   
@@ -14,7 +14,7 @@ test.describe('header redirects', () => {
     await header.product.click();
     await header.productsSection.financeAndESGButton.click();
     await header.productsSection.financeAndESGPage.ESGKPIEngine.click();
-    await expect(page).toHaveURL(data.HEADER_REDIRECT.FINANCE_ESG.ESG_KPI_ENGINE);
+    await expect(page).toHaveURL(DATA.REDIRECTS.HEADER_REDIRECT.FINANCE_ESG.ESG_KPI_ENGINE);
   });
 
 });
