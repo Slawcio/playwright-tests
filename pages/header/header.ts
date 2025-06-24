@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
-import BasePage from "../../base-page";
-import ProductsSection from "./products/products-section";
+import BasePage from "../base-page";
+import ProductsSection from "./products-section/products-section";
 
 export default class Header extends BasePage {
 
