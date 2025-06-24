@@ -3,15 +3,15 @@ import MainPage from '../../pages/main-page/main-page';
 import TrustedPartnerSection from '../../pages/main-page/trusted-partner-section/trusted-partner-section';
 import FinalServicesSection from '../../pages/main-page/financial-services-section/financial-services-section';
 import data from '../data/data';
+import commonSteps from '../common-steps/common-steps';
 
-test.describe('verify financial-services-section', () => {
+test.describe('financial-services-section', () => {
   
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await commonSteps.openPage(page);
   });
 
-  test('verify financial-services-section elements are visible', async ({ page }) => {
+  test('verify elements are visible', async ({ page }) => {
     const financialServicesSection = new FinalServicesSection(page);
     await financialServicesSection.assertAllPageLocatorsVisible();
     const financialCards = await financialServicesSection.getCardsList();
@@ -20,7 +20,7 @@ test.describe('verify financial-services-section', () => {
     };
   });
 
-  test('verify financial-services-section cards are redirecting', async ({ page }) => {
+  test('verify cards are redirecting', async ({ page }) => {
     const financialServicesSection = new FinalServicesSection(page);
     const financialCards = await financialServicesSection.getCardsList();
 
@@ -33,7 +33,7 @@ test.describe('verify financial-services-section', () => {
       } 
   });
 
-  test('verify financial-services-section buttons are redirecting', async ({ page }) => {
+  test('verify buttons are redirecting', async ({ page }) => {
     const financialServicesSection = new FinalServicesSection(page);
     const financialCards = await financialServicesSection.getCardsList();
 
