@@ -23,12 +23,17 @@ test.describe('verify financial-services-section', () => {
   test('verify financial-services-section cards are redirecting', async ({ page }) => {
     const financialServicesSection = new FinalServicesSection(page);
     const financialCards = await financialServicesSection.getCardsList();
-    for (const card of financialCards) {
-      await card.assertAllPageLocatorsVisible();
-    };
+
+      for(const [index, card] of financialCards.entries()) {
+        await test.step(`${await card.title.textContent()} card redirect to ${data.CARD_REDIRECT_URLS[index]}`, async () => {
+          await card.cardElement.click();
+          await expect(page).toHaveURL(data.CARD_REDIRECT_URLS[index]);
+          await page.goBack();
+        });
+      } 
   });
 
-  test.only('verify financial-services-section buttons are redirecting', async ({ page }) => {
+  test('verify financial-services-section buttons are redirecting', async ({ page }) => {
     const financialServicesSection = new FinalServicesSection(page);
     const financialCards = await financialServicesSection.getCardsList();
 
