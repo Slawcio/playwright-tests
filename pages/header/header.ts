@@ -4,7 +4,7 @@ import ProductsSection from "./products-section/products-section";
 
 export default class Header extends BasePage {
 
-    readonly productsSection: ProductsSection
+    private readonly productsSection: ProductsSection
 
     constructor(protected readonly page: Page) {
         super(page);

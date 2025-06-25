@@ -4,7 +4,7 @@ import ContactUsForm from './sections/contact-us-form';
 
 export default class ContactSales extends BasePage {
 
-    contactUsForm: ContactUsForm;
+    private readonly contactUsForm: ContactUsForm;
 
     constructor(page: Page) {
         super(page);
