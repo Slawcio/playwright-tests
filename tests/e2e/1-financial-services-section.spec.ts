@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import FinalServicesSection from '../../pages/main-page/sections/financial-services-section';
-import DATA from '../data/data';
+import TEST_DATA from '../data/data';
 import commonSteps from '../common-steps/common-steps';
 
 test.describe('financial-services-section', () => {
@@ -23,9 +23,9 @@ test.describe('financial-services-section', () => {
     const financialCards = await financialServicesSection.getCardsList();
 
       for(const [index, card] of financialCards.entries()) {
-        await test.step(`${await card.title.textContent()} card redirect to ${DATA.REDIRECTS.CARD[index]}`, async () => {
+        await test.step(`${await card.title.textContent()} card redirect to ${TEST_DATA.REDIRECTS.CARD[index]}`, async () => {
           await card.cardElement.click();
-          await expect(page).toHaveURL(DATA.REDIRECTS.CARD[index]);
+          await expect(page).toHaveURL(TEST_DATA.REDIRECTS.CARD[index]);
           await page.goBack();
         });
       } 
@@ -36,9 +36,9 @@ test.describe('financial-services-section', () => {
     const financialCards = await financialServicesSection.getCardsList();
 
       for(const [index, card] of financialCards.entries()) {
-        await test.step(`${await card.title.textContent()} card redirect to ${DATA.REDIRECTS.CARD[index]}`, async () => {
+        await test.step(`${await card.title.textContent()} card redirect to ${TEST_DATA.REDIRECTS.CARD[index]}`, async () => {
           await card.button.click();
-          await expect(page).toHaveURL(DATA.REDIRECTS.CARD[index]);
+          await expect(page).toHaveURL(TEST_DATA.REDIRECTS.CARD[index]);
           await page.goBack();
         });
       } 

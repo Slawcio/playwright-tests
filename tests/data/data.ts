@@ -5,10 +5,10 @@ const URL = {
     AI_AGENT: 'ai-agent/',
 }
 
-const DATA = {
+const TEST_DATA = {
     REDIRECTS:{
         CARD: [URL.BANKING, URL.INSURANCE, URL.FINANCE_ESG],
-        HEADER_REDIRECT: {
+        HEADER: {
             BANKING: {},
             INSURANCE: {},
             FINANCE_ESG: {
@@ -31,4 +31,4 @@ const DATA = {
 }
 
 
-export default DATA;
+export default TEST_DATA;
