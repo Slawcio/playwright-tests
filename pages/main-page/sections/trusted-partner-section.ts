@@ -1,7 +1,7 @@
 import { Page, Locator } from "@playwright/test";
 import BasePage from "../../base-page";
 
-export default class KeyFactSection extends BasePage {
+export default class TrustedPartnerSection extends BasePage {
 
     constructor(page: Page) {
         super(page);
@@ -9,10 +9,11 @@ export default class KeyFactSection extends BasePage {
 
     get section(): Locator { return this.page.locator("article[class='stepper-block py-4 py-xl-8'] div[class='row']"); }
     get label(): Locator { return this.page.locator("(//h2[normalize-space()='Innovate with a trusted partner on your side'])[1]"); }
-    get keyFactsList(): Promise<KeyFact[]> { return this.getKeyFactList(); }
+    get keyFactsContainer(): Locator { return this.page.locator("ul.list-reset.d-flex.flex-column.gap-4"); }
 
     async getKeyFactList(): Promise<KeyFact[]>{
-        const listItems = this.page.locator("ul.list-reset.d-flex.flex-column.gap-4 > li");
+        const listContainer = this.keyFactsContainer;
+        const listItems = listContainer.locator('li');
         const count = await listItems.count();
         const keyFactList: KeyFact[] = [];
 
