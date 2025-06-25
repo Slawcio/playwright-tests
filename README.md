@@ -3,17 +3,17 @@
 This repository contains automated end-to-end tests using [Playwright](https://playwright.dev/).  
 Test scenarios are organized in the following files:
 
-- `1-financial-services.spec.ts` — Scenario 1: [
+- `1-financial-services.spec.ts` — Scenario 1: 
     - verify if every element of section is visible
     - verify redirection from card and button perspective
-]
-- `2-audit-redirect.spec.ts` — Scenario 2: [
+
+- `2-audit-redirect.spec.ts` — Scenario 2: 
     - verify redirection from Products -> Finance & ESG -> ESG KPI Engine
-]
-- `3-redirect-work-email.spec.ts` — Scenario 3: [
+
+- `3-redirect-work-email.spec.ts` — Scenario 3: 
     - verify `Get in touch` flow
     - verify email input FE validation
-]
+
 
 Made for recruitment process as well as exploring some ideas:
 - page composition from sections
@@ -64,11 +64,9 @@ npm run test --grep @my_tag
 
 To run a specific scenario:
 ```sh
-npx playwright test 1-financial-services.spec.ts
-npx playwright test 2-audit-redirect.spec.ts
-npx playwright test 3-redirect-work-email.spec.ts
+npx playwright test file_name.spec.ts
 #or
-npm run test ...
+npm run test file_name.spec.ts
 ```
 
 ### Test Structure
@@ -79,3 +77,7 @@ npm run test ...
 ### TS Linting and Formatting
 
 ...in progress
+
+### Selectors
+
+should be changed to unique. So far whatever was working and identifying elements
