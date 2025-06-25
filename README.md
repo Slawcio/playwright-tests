@@ -34,7 +34,6 @@ Made for recruitment process as well as exploring some ideas:
 1. Clone the repository:
    ```sh
    git clone git@github.com:Slawcio/playwright-tests.git
-
 2. Install dependencies:
    ```sh
    npm install
@@ -52,6 +51,15 @@ Made for recruitment process as well as exploring some ideas:
 To run all tests:
 ```sh
 npx playwright test
+# or
+npm run test
+```
+
+To run with tags
+```sh
+npx playwright test --grep @my_tag
+#or
+npm run test --grep @my_tag
 ```
 
 To run a specific scenario:
@@ -59,6 +67,8 @@ To run a specific scenario:
 npx playwright test 1-financial-services.spec.ts
 npx playwright test 2-audit-redirect.spec.ts
 npx playwright test 3-redirect-work-email.spec.ts
+#or
+npm run test ...
 ```
 
 ### Test Structure
@@ -69,9 +79,3 @@ npx playwright test 3-redirect-work-email.spec.ts
 ### TS Linting and Formatting
 
 ...in progress
-
-### Tagging
-
-```sh
-npx playwright test --grep @my_tag
-```
