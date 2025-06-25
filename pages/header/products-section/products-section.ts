@@ -3,7 +3,7 @@ import BasePage from "../../base-page";
 
 export default class ProductsSection extends BasePage {
 
-    financeAndESG: FinanceAndESG;
+    private readonly financeAndESG: FinanceAndESG;
     
     constructor(protected readonly page: Page) {
         super(page);
@@ -16,7 +16,7 @@ export default class ProductsSection extends BasePage {
   }
 
   class FinanceAndESG extends BasePage {
-    constructor(page: Page, ) {
+    constructor(protected readonly page: Page, ) {
         super(page);
     }
 
