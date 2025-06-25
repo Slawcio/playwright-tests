@@ -12,6 +12,7 @@ test.describe('financial-services-section', { tag: '@smoke' }, () => {
   test('verify elements are visible', async ({ page }) => {
     const financialServicesSection = new FinalServicesSection(page);
     await financialServicesSection.assertAllPageLocatorsVisible();
+    await expect(financialServicesSection.length).toEqual(3);
     const financialCards = await financialServicesSection.getCardsList();
     for (const card of financialCards) {
       await card.assertAllPageLocatorsVisible();
