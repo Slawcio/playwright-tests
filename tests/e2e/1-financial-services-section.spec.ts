@@ -3,7 +3,7 @@ import FinalServicesSection from '../../pages/main-page/sections/financial-servi
 import TEST_DATA from '../data/data';
 import commonSteps from '../common-steps/common-steps';
 
-test.describe('financial-services-section', () => {
+test.describe('financial-services-section', { tag: '@smoke' }, () => {
   
   test.beforeEach(async ({ page }) => {
     await commonSteps.openPage(page);
