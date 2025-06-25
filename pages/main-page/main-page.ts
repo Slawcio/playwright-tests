@@ -4,8 +4,6 @@ import BasePage from '../base-page';
 
 export default class MainPage extends BasePage {
 
-  readonly header: Header;
-
     constructor(page: Page) {
       super(page);
     }
