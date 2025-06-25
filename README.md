@@ -3,24 +3,25 @@
 This repository contains automated end-to-end tests using [Playwright](https://playwright.dev/).  
 Test scenarios are organized in the following files:
 
-- `1-financial-services.spec.ts` — Scenario 1: 
+- Scenario 1: `1-financial-services.spec.ts`: 
     - verify if every element of section is visible
     - verify redirection from card and button perspective
 
-- `2-audit-redirect.spec.ts` — Scenario 2: 
+- Scenario 2: `2-audit-redirect.spec.ts`: 
     - verify redirection from Products -> Finance & ESG -> ESG KPI Engine
 
-- `3-redirect-work-email.spec.ts` — Scenario 3: 
+- Scenario 3: `3-redirect-work-email.spec.ts`: 
     - verify `Get in touch` flow
     - verify email input FE validation
 
 
 Made for recruitment process as well as exploring some ideas:
 - page composition from sections
-- diving classes as soon as possible
-- check all elements per page method
+- check all elements in base class
 - one export (utils, test data) -> all necessary methods and data inside
-- seeking to minimize redundancy and boilerplate code at the very beginning
+- seeking to minimize redundancy and 
+boilerplate code at the very beginning
+- feel free to challange it
 
 ## Getting Started
 
@@ -45,6 +46,10 @@ Made for recruitment process as well as exploring some ideas:
    ```sh
    npx playwright install
    ```
+### Setup .env file
+
+Use a .env file to store sensitive data (e.g., API keys, base URLs).
+This keeps credentials secure, allows easy env switching, and avoids hardcoding.
 
 ### Running Tests
 
